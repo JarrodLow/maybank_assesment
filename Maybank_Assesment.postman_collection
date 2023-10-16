@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "ef1237c7-fd23-40df-981f-b777c5be2867",
+		"name": "Assesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10673297"
+	},
+	"item": [
+		{
+			"name": "Maybank",
+			"item": [
+				{
+					"name": "Process API DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"ca0dc3da-01c0-4167-9f8b-6b683cb968e3\",\r\n    \"name\" : \"jarrodUpdated\",\r\n    \"customerDetail\" :{\r\n        \"customerIdNo\": \"A0021\"\r\n    },\r\n    \"version\" : 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/v1/customer/action/ DELETE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"v1",
+								"customer",
+								"action",
+								" DELETE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process API Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"6eccd43d-832a-4343-a069-d955db557fe7\",\r\n    \"name\" : \"jarrodUpdated\",\r\n    \"customerDetail\" :{\r\n        \"customerIdNo\": \"A0021\",\r\n        \"githubUserName\" : \"\"\r\n    },\r\n    \"version\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/v1/customer/action/ UPDATE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"v1",
+								"customer",
+								"action",
+								" UPDATE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process API CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"jarrodCool32\",\r\n    \"customerDetail\" :{\r\n        \"customerIdNo\": \"A0021\",\r\n        \"githubUserName\" : \"jarrodlow\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/v1/customer/action/ CREATE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"v1",
+								"customer",
+								"action",
+								" CREATE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inquiry List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/v1/customer/inquiry?name=jar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"v1",
+								"customer",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "jar"
+								},
+								{
+									"key": "page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/v1/customer/detail/ca0dc3da-01c0-4167-9f8b-6b683cb968e3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"v1",
+								"customer",
+								"detail",
+								"ca0dc3da-01c0-4167-9f8b-6b683cb968e3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
