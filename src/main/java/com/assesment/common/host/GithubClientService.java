@@ -26,11 +26,11 @@ public class GithubClientService {
                 .method(HttpMethod.GET)
                 .uri("/users/" + userName)
                 .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<Map<String, Serializable>>() {})
+                .bodyToMono(new ParameterizedTypeReference<Map<String, Serializable>>() {})//to decode the body to given type
                 .doOnError(throwable -> {
                     throw new BaseException("Error Client Service");
                 })
-                .block();
+                .block(); //to sleep the webclient aftter done
         return !Objects.isNull(result) && !Objects.isNull(result.get("login"));
     }
 

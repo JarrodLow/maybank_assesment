@@ -26,7 +26,6 @@ import java.util.UUID;
 public class CustomerController{
 
     private final CustomerService customerService;
-    private final GithubClientService githubClientService;
 
     @PostMapping(value = "/action/{actionType}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "To process Customer")
