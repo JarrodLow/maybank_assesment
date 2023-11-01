@@ -1,10 +1,18 @@
 package com.assesment.exception;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+@AllArgsConstructor
+@Getter
+@Setter
 public class BaseException extends RuntimeException{
     protected String msg;
 
@@ -50,52 +58,6 @@ public class BaseException extends RuntimeException{
         this.params = params;
         this.wrpEx = ex;
         gnrExUid();
-    }
-
-    public void addException(BaseException exception) {
-        if (null == baseExceptionList) {
-            baseExceptionList = new ArrayList<>();
-        }
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getExId() {
-        return exId;
-    }
-
-    public void setExId(String exId) {
-        this.exId = exId;
-    }
-
-    public Object[] getParams() {
-        return params;
-    }
-
-    public void setParams(Object[] params) {
-        this.params = params;
-    }
-
-    public List<BaseException> getBaseExceptionList() {
-        return baseExceptionList;
-    }
-
-    public void setBaseExceptionList(List<BaseException> baseExceptionList) {
-        this.baseExceptionList = baseExceptionList;
-    }
-
-    public Throwable getWrpEx() {
-        return wrpEx;
-    }
-
-    public void setWrpEx(Throwable wrpEx) {
-        this.wrpEx = wrpEx;
     }
 
     @Override
