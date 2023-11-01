@@ -17,7 +17,6 @@ public class CustomerCommandService {
     private final CustomerRepository customerRepository;
     private final ObjectMapper objectMapper;
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public CustomerRespDTO saveCustomer(Customer customer)
     {
         Customer customerResp = customerRepository.saveAndFlush(customer);

@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
 import java.util.*;
@@ -30,6 +31,8 @@ public class CustomerService {
     private final CustomerQueryService customerQueryService;
     private final CustomerValidateService customerValidateService;
     private final GithubClientService githubClientService;
+
+    @Transactional
     public CustomerRespDTO processCustomer(CustomerReq customerReq, ActionType actionType) {
         customerValidateService.validateCustomer(customerReq, actionType);
         if (Objects.isNull(customerReq.getId()) && ActionType.CREATE.equals(actionType)) {
